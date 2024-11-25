@@ -8,10 +8,10 @@ public class Prog1 {
 
         int x = rand.nextInt(1,10);
         double piPowerOfX = Math.pow(Math.PI,x);
-        System.out.printf("Output 1: %.2f\n", piPowerOfX);
+        System.out.printf("Solution 1: %.2f\n", piPowerOfX);
 
         int y = rand.nextInt(3,15);
         double yPowerOfX = Math.pow(y,x);
-        System.out.printf("Output 2: %.2f\n", yPowerOfX);
+        System.out.printf("Solution 2: %.2f\n", yPowerOfX);
     }
 }
