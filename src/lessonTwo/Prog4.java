@@ -1,9 +1,7 @@
 package lessonTwo;
-
 import java.util.Arrays;
 
 public class Prog4 {
-
     public static void main(String[] args) {
         String[] givenArray = {"horse", "dog", "cat","horse","dog"};
         String[] newArray = new String[givenArray.length];
@@ -25,13 +23,5 @@ public class Prog4 {
         System.arraycopy(newArray, 0, resultArray, 0, counter);
 
         System.out.println(Arrays.toString(resultArray));
-
-
     }
-
-
-
-
-
-
 }
