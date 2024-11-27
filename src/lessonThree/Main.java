@@ -2,6 +2,7 @@ package lessonThree;
 
 public class Main {
     public static void main(String[] args) {
+        //Solution of Problem 1
         Customer customer1 = new Customer("Joe", "Smith", "332-221-4444");
         customer1.setBillingAddress(new Address("1 A St", "Chicago", "IL", "11111"));
         customer1.setShippingAddress(new Address("1 A St", "Chicago", "IL", "11111"));
@@ -18,5 +19,9 @@ public class Main {
         for (Customer customer : customers)
             if (customer.getBillingAddress().getCity().equals("Chicago"))
                 System.out.println(customer);
+
+
+        //Solution of Problem2
+        //Code from here
     }
 }
