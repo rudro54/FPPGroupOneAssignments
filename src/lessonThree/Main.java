@@ -1,7 +1,5 @@
 package lessonThree;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
         Customer customer1 = new Customer("Joe", "Smith", "332-221-4444");
