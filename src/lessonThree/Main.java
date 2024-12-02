@@ -1,6 +1,9 @@
 package lessonThree;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -53,5 +56,33 @@ public class Main {
         System.out.println(heartRate);
 
         //Solution of Problem3
+        //1.a
+        System.out.println("Please, enter event name: ");
+        String eventName = sc.nextLine();
+
+        System.out.println("Please, enter event date (yyyy-MM-dd): ");
+        String eventDateStringValue = sc.nextLine();
+
+        System.out.println("Please, enter event time (HH:mm): ");
+        String eventTimeStringValue = sc.nextLine();
+
+        LocalDateTime eventDateTime = LocalDateTime.parse(eventDateStringValue + "T" + eventTimeStringValue);
+        ZonedDateTime eventZonedDateTime = eventDateTime.atZone(ZoneId.systemDefault());
+
+        Event event = new Event(eventName, eventZonedDateTime);
+        //1.b
+        event.displayDay();
+        event.checkLeapYear();
+        //1.c
+        event.daysRemaining();
+        //2.a
+        event.displayFormattedEventDetails();
+        //3.a
+        System.out.println("Sample Time Zones: America/Panama, America/Chicago, America/Indiana/Indianapolis, America/Santiago, America/Phoenix");
+        System.out.print("Enter the target time zone: ");
+        String targetTimeZone = sc.nextLine();
+        event.convertToTimeZone(targetTimeZone);
     }
+
+
 }
