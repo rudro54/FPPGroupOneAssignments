@@ -67,6 +67,8 @@ public class HeartRates {
         System.out.printf("Target Heart Rate Range is between %.2f and %.2f\n", calculateLBTHR(), calculateUBTHR());
     }
 
-
-
+    @Override
+    public String toString() {
+        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nDate of Birth: " + dateOfBirth + "\nMaximum Heart Rate: " + calculateMHR();
+    }
 }

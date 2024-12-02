@@ -1,5 +1,9 @@
 package lessonThree;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         //Solution of Problem 1
@@ -22,6 +26,32 @@ public class Main {
 
 
         //Solution of Problem2
-        //Code from here
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please, enter your first name:");
+        String firstName = sc.nextLine();
+        System.out.println("Please, enter your last name:");
+        String lastName = sc.nextLine();
+        System.out.println("Please, enter your birth date in the format - (yyyy-MM-dd) - Example: 1989-4-14");
+        String birthDateStringValue = sc.nextLine();
+        DateTimeFormatter formatterMM = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatterM = DateTimeFormatter.ofPattern("yyyy-M-dd");
+
+        LocalDate birthDate = null;
+        try {
+            birthDate = LocalDate.parse(birthDateStringValue, formatterMM);
+        } catch(Exception _) {
+            try {
+                birthDate = LocalDate.parse(birthDateStringValue, formatterM);
+            } catch(Exception _) {
+                System.out.println("Unsupported date format");
+                return;
+            }
+        }
+
+        HeartRates heartRate = new HeartRates(firstName, lastName, birthDate);
+        heartRate.targetHeartRateRange();
+        System.out.println(heartRate);
+
+        //Solution of Problem3
     }
 }
