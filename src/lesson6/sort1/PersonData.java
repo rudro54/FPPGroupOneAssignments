@@ -1,7 +1,6 @@
-package lesson6sort.sort1;
+package lesson6.sort1;
 
 import java.util.Arrays;
-import java.util.Comparator;
 // Sort1-Outside Comparator
 /** Processes person data. Makes use of an external NameComparator class */
 public class PersonData {
@@ -13,10 +12,13 @@ public class PersonData {
 		return persons;
 	}
 	public static void main(String[] args) {
-		
+
 		Person[] persons = prepareData();
+		System.out.println("Sorting by first name");
+		System.out.println("Before sorting: " + Arrays.toString(persons));
+		Arrays.sort(persons, new FirstNameComparator());
+		System.out.println("After sorting: " + Arrays.toString(persons));
 		
-		
-	}	
+	}
 	
 }

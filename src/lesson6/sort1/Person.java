@@ -1,6 +1,5 @@
-package lesson6sort.sort4;
+package lesson6.sort1;
 
-import java.util.Arrays;
 public class Person {
 	private String fname;
 	private String lname;

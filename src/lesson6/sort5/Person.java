@@ -1,7 +1,5 @@
-package lesson6sort.sort3;
+package lesson6.sort5;
 
-import java.util.Arrays;
-import java.util.Comparator;
 public class Person {
 	private String fname;
 	private String lname;
@@ -28,10 +26,6 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return fname + " " + lname;
+		return fname + " " + lname + " " + salary;
 	}
-	
-
-	
-	
 }
