@@ -61,10 +61,10 @@ public class TemperatureSensor implements Sensor {
 
     @Override
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
         return "Sensor Type: " + getSensorType() +
-                "\nLocation: " + getLocation() +
                 "\nReading: " + getReading() +
+                "\nLocation: " + getLocation() +
                 "\nLast Updated: " + getLastUpdated().format(formatter) +
                 "\nAction: " + performAction() + "\n";
     }
