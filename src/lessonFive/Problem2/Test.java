@@ -1,20 +1,18 @@
 package lessonFive.Problem2;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Test {
-
-
     public static void main(String[] args) {
+        Professor profRiaz = new Professor("Dr. Riaz Mollah", 5000, LocalDate.of(2005, 3, 15), 15);
+        Professor profZashim = new Professor("Dr. Zashim Uddin", 4000, LocalDate.of(2010, 4, 15), 10);
+        Professor profZanith = new Professor("Dr. Zenith Lott", 3000, LocalDate.of(2015, 7, 15), 8);
+        Secretary secOpu = new Secretary("Mr. Opu Mollah", 2000,LocalDate.of(2018, 2, 5), 10);
+        Secretary secAmin = new Secretary("Mr. Amin Mir", 1000, LocalDate.of(2020, 7, 10), 5);
 
-        DeptEmployee[] departments = new DeptEmployee[5];
-        departments[0] = new Professor("Dr. Riaz Mollah", LocalDate.of(2005, 3, 15), 120000, 15);
-        departments[1] = new Professor("Dr. Zashim Uddin", LocalDate.of(2010, 4, 15), 110000, 10);
-        departments[2] = new Professor("Dr. Zenith Lott", LocalDate.of(2015, 7, 15), 100000, 8);
-        departments[3] = new Secretary("Mr. Opu Mollah", LocalDate.of(2018, 2, 5), 6000, 10);
-        departments[4] = new Secretary("Mr. Amin Mir", LocalDate.of(2020, 7, 10), 5000, 5);
-
+        DeptEmployee[] departments = new DeptEmployee[] {
+                profRiaz, profZashim, profZanith, secOpu, secAmin
+        };
 
         for(DeptEmployee employee:departments){
             System.out.println(employee);
@@ -26,22 +24,19 @@ public class Test {
 
         if (response.equalsIgnoreCase("Y")) {
             double result = computeSalaries(departments);
-            System.out.println("Total Salary Of The Department :" + String.format("%.2f", result));
+            System.out.println("Total Salary Of The Department: " + String.format("%.2f", result));
 
             double averageSalary = result / departments.length;
-            System.out.println("Total Average Salary :" + String.format("%.2f", averageSalary));
-
+            System.out.println("Average Salary Of The Department: " + String.format("%.2f", averageSalary));
         } else {
             System.out.println("Getting Out By Doing Nothing");
-            sc.close();
         }
 
+        sc.close();
     }
 
     public static double computeSalaries(DeptEmployee[] collection) {
-
         double salary = 0.0;
-
         if (collection != null) {
             for (DeptEmployee employee : collection) {
                 if (employee != null) {
@@ -51,8 +46,6 @@ public class Test {
         }
         return salary;
     }
-
-
 }
 
 
