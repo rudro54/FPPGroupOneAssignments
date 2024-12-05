@@ -10,26 +10,26 @@ public class Test {
         products[3] = new Clothing("Jacket", 889.99, "Arc'teryx", 50);
         products[4] = new Furniture("Table", 149.99, "metal", 10.00);
 
-        for(Product product:products){
+        for (Product product : products) {
             System.out.println(product);
         }
 
         double totalSum = sumOfProducts(products);
-        System.out.println("Total Sum Of Products :"+String.format("%.2f",totalSum));
+        System.out.println("Total Sum Of Products :" + String.format("%.2f", totalSum));
 
     }
 
 
-    public static double sumOfProducts(Product[] collection){
-        double sum=0.0;
+    public static double sumOfProducts(Product[] collection) {
+        double sum = 0.0;
 
-       if(collection!=null){
-           for(Product product:collection){
-               if(product!=null){
-                   sum+= product.calculatePrice();
-               }
-           }
-       }
+        if (collection != null) {
+            for (Product product : collection) {
+                if (product != null) {
+                    sum += product.calculatePrice();
+                }
+            }
+        }
         return sum;
     }
 
