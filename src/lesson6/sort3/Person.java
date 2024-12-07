@@ -28,8 +28,4 @@ public class Person {
 	public String toString() {
 		return fname + " " + lname + " " + salary;
 	}
-	
-
-	
-	
 }
