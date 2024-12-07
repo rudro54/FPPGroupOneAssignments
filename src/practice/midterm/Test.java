@@ -35,7 +35,7 @@ public class Test {
         }
         List<Person> personsWithBusinessContacts = new ArrayList<Person>();
         for(Person person: persons) {
-            if(person.hasBusinessContact()) {
+            if(person.hasContactType(contactType)) {
                 personsWithBusinessContacts.add(person);
             }
         }

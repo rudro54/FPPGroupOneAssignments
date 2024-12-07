@@ -52,12 +52,12 @@ public class Person {
     }
 
     //Instance method
-    public boolean hasBusinessContact() {
+    public boolean hasContactType(ContactType type) {
         if(contacts == null) {
             return false;
         }
         for(Contact contact : contacts) {
-            if(contact != null && contact.getType() == ContactType.BUSINESS) {
+            if(contact != null && contact.getType() == type) {
                 return true;
             }
         }
