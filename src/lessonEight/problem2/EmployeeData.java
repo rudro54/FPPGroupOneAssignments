@@ -1,4 +1,4 @@
-package lessonFive.problem2;
+package lessonEight.problem2;
 
 public interface EmployeeData {
     double getSalary();

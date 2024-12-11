@@ -1,4 +1,4 @@
-package lessonFive.problem1;
+package lessonEight.problem1;
 
 class Person {
 	private String firstName;

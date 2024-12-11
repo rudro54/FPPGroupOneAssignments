@@ -1,4 +1,4 @@
-package lessonFive.problem2;
+package lessonEight.problem2;
 import java.util.*;
 class Statistics {
 	// Computes the sum of all salaries polymorphically

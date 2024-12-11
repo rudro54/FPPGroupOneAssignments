@@ -1,4 +1,4 @@
-package lessonFive.problem1;
+package lessonEight.problem1;
 
 public class MyPersonList {
 	private final int INITIAL_LENGTH = 3;
