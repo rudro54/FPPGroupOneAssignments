@@ -9,7 +9,8 @@ public final class Teacher implements EmployeeData {
 		this.salary = salary;
 		this.bonus = bonus;
 	}
-	
+
+	@Override
 	public double getSalary() {
 		return salary + bonus;
 	}
@@ -18,5 +19,10 @@ public final class Teacher implements EmployeeData {
 	}
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public String toString() {
+		return name + " " + getSalary();
 	}
 }

@@ -13,10 +13,17 @@ public final class Staff implements EmployeeData {
 	public String getName() {
 		return name;
 	}
+
+	@Override
 	public double getSalary() {
 		return salary;
 	}
 	public int getNumDependants() {
 		return numDependants;
+	}
+
+	@Override
+	public String toString() {
+		return name + " " + getSalary();
 	}
 }
