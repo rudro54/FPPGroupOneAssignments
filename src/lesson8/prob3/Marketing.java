@@ -43,4 +43,12 @@ public class Marketing {
 		return employeename + " " + productname + " " + salesamount;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		Marketing marketing = (Marketing) obj;
+		return Double.compare(marketing.salesamount, salesamount) == 0 && employeename.equals(marketing.employeename) && productname.equals(marketing.productname);
+	}
+
 }
