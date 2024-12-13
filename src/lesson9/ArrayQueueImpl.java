@@ -6,15 +6,13 @@ public class ArrayQueueImpl {
     private int[] arr = new int[10];
     private int front = -1;
     private int rear = 0;
+
     public int peek() {
         if(isEmpty()) {
             System.out.println("Queue is empty");
             return -1;
         }
-
-        if(front == -1)
-            return arr[0];
-        return arr[front];
+        return arr[front+1];
     }
     public void enqueue(int obj) {
         if( size() == arr.length)
@@ -45,6 +43,6 @@ public class ArrayQueueImpl {
 
     @Override
     public String toString() {
-        return "Front: " + front + " " + "Rear: " + rear + " " + "Size: " + size() + "\n" + Arrays.toString(arr) ;
+        return "\n---\n" + "Front: " + front + " " + "Rear: " + rear + " " + "Size: " + size() + "\n" + Arrays.toString(arr) + "\n---\n" ;
     }
 }
