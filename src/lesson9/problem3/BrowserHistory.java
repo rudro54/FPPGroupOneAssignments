@@ -23,25 +23,25 @@ public class BrowserHistory {
         if(this.url != null)
             backwardPages.push(this.url);
         this.url = url;
-        System.out.println(this);
+        System.out.println("Visited: " + url);
     }
     public void back() {
         if (backwardPages.isEmpty()) {
-            System.out.println(this);
+            System.out.println("No history to go back to.");
             return;
         }
         forwardPages.push(url);
         url = backwardPages.pop();
-        System.out.println(this);
+        System.out.println("Back to: " + url);
     }
     public void forward() {
         if (forwardPages.isEmpty()) {
-            System.out.println(this);
+            System.out.println("No forward history.");
             return;
         }
         backwardPages.push(url);
         url = forwardPages.pop();
-        System.out.println(this);
+        System.out.println("Forward to: " + url);
     }
 
     @Override
