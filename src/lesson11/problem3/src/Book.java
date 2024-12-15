@@ -1,5 +1,6 @@
 package lesson11.problem3.src;
 
+/*
 class Book {
     private String ISBN;
     private String title;
@@ -23,6 +24,7 @@ class Book {
     }
     @Override
     public String toString() {
-        return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
+         return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
     }
 }
+*/
