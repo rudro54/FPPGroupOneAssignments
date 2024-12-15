@@ -8,83 +8,76 @@ public class Library {
 
     public void addBook(String ISBN, String title, String author) {
         if(ISBN == null || title == null || author == null) {
-            System.out.println("Incomplete information! Book with ISBN " + title + " cannot be added the library.");
+            System.out.println("Incomplete information! Book cannot be added.");
             return;
         }
         if (books.containsKey(ISBN)) {
-            System.out.println("Book with ISBN " + ISBN + " already exists in the library.");
+            System.out.println("ISBN: " + ISBN + " already exists!");
         } else {
             books.put(ISBN, new Book(ISBN, title, author));
-            System.out.println("Book with ISBN " + ISBN + " has been added to the library.");
+            System.out.println("The book " + title + " has been added.");
         }
     }
     public void borrowBook(String ISBN) {
         Book book = books.get(ISBN);
         if (book == null) {
-            System.out.println("Book with ISBN " + ISBN + " does not exist in the library.");
+            System.out.println("The book with ISBN " + ISBN + " does not exist.");
         } else if (book.isBorrowed()) {
-            System.out.println("Book with ISBN " + ISBN + " is already borrowed.");
+            System.out.println("The book with ISBN " + ISBN + " is already borrowed.");
         } else {
             book.setBorrowed(true);
-            System.out.println("Book with ISBN " + ISBN + " has been borrowed.");
+            System.out.println("The book with ISBN " + ISBN + " has been issued.");
         }
     }
     public void returnBook(String ISBN) {
         Book book = books.get(ISBN);
         if (book == null) {
-            System.out.println("Book with ISBN " + ISBN + " does not exist in the library.");
+            System.out.println("The book with ISBN " + ISBN + " does not exist.");
         } else if (!book.isBorrowed()) {
-            System.out.println("Book with ISBN " + ISBN + " was not borrowed.");
+            System.out.println("The book with ISBN " + ISBN + " was not borrowed.");
         } else {
             book.setBorrowed(false);
-            System.out.println("Book with ISBN " + ISBN + " has been returned.");
+            System.out.println("The book with ISBN " + ISBN + " has been returned.");
         }
     }
-
-    // Check if a book is borrowed
     public boolean isBookBorrowed(String ISBN) {
         Book book = books.get(ISBN);
-        if (book == null) {
-            System.out.println("Book with ISBN " + ISBN + " does not exist in the library.");
+        if (book == null)
             return false;
-        }
-        return book.isBorrowed();
+        else
+            return book.isBorrowed();
     }
-
-    // Get details of a book
     public String getBookDetails(String ISBN) {
         Book book = books.get(ISBN);
-        if (book == null) {
-            return "Book with ISBN " + ISBN + " does not exist in the library.";
-        }
-        return book.toString();
+        if (book == null)
+            return "The book with ISBN " + ISBN + " does not exist.";
+        else
+            return book.toString();
     }
-
-    // List all books in the library
     public void listAllBooks() {
         if (books.isEmpty()) {
-            System.out.println("No books in the library.");
-        } else {
-            System.out.println("All Books in the Library:");
-            for (Book book : books.values()) {
-                System.out.println(book);
-            }
+            System.out.println("Empty library!");
+            return;
         }
+        System.out.println("\nBooks in the library: ");
+        for (Book book : books.values()) {
+            System.out.println(book);
+        }
+        System.out.println("\n");
     }
-
-    // List all borrowed books
     public void listBorrowedBooks() {
-        boolean found = false;
-        System.out.println("Borrowed Books in the Library:");
+        int counter = 0;
+        System.out.println("\nBorrowed Books: ");
         for (Book book : books.values()) {
             if (book.isBorrowed()) {
                 System.out.println(book);
-                found = true;
+                counter++;
             }
         }
-        if (!found) {
+        if (counter == 0)
             System.out.println("No books are currently borrowed.");
-        }
+
+        System.out.println("\n");
     }
 }
 
