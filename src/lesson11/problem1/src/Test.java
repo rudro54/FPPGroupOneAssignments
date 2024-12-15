@@ -14,7 +14,7 @@ public class Test {
 				add(new Student("Richard", "Wong", 2.8, Standing.SOPHOMORE));
 			}
 		};
-		
+		System.out.println(list);
 		HashMap<Key, Student> map = Admin.processStudents(list);
 		boolean[] expectedOutput = {true, false};
 		boolean[] results = new boolean[2];
@@ -24,10 +24,6 @@ public class Test {
 		results[0] = (map.get(pierre).equals(s));
 		results[1] = map.containsKey(richard);
 		System.out.println((Arrays.equals(expectedOutput, results) ? "pass" : "fail"));
-		
-		
-
-
 	}
 
 }
